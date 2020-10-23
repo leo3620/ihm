@@ -16,8 +16,8 @@
 		#magazine {
 			position: absolute;
 			top: 60px;
-			width: 100vw;
-			height: 100vh;
+			width: 576px;
+			height: 752px;
 		}
 
 		#magazine .turn-page {
@@ -26,13 +26,12 @@
 		}
 
 		#top {
-		
-			width: 100vw;
+			background-image: url(pages/a.png);
+			width: 576px;
 			height: 70px;
 			position: absolute;
 			z-index: 100000000000;
 			background-repeat: no-repeat;
-			background-color: black;
 		}
 
 		#back {
@@ -64,21 +63,20 @@
 			z-index: 100000000000;
 			background-repeat: no-repeat;
 			top: 400px;
-			right: 0px;
+			left: 510px;
 			background-size: contain;
 			cursor: pointer;
 		}
 
 		#wrapper {
 			padding: 50px 80px 0px 80px;
-			height: 100vh;
+			height: 720px;
 			background-color: white;
 			overflow: auto;
 			position: absolute;
-			width: 85vw;
+			width: 420px;
 			text-align: justify;
 			mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
-			background-color: white;
 		}
 	</style>
 </head>
@@ -241,7 +239,7 @@
 
 
 		if($('#wrapper').hasScrollBar()) {
-		//	$('#next').hide();
+			$('#next').hide();
         }
 						/*console.log('Current view: ', $(this).turn('view'));*/
 					}
@@ -274,7 +272,7 @@
 
 
 		if($('#wrapper').hasScrollBar()) {
-			// $('#next').hide();
+			$('#next').hide();
         }
 		
 		});
