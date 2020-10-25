@@ -2,292 +2,260 @@
 <html>
 
 <head>
-	<script
-			  src="https://code.jquery.com/jquery-3.5.1.min.js"
-			  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-			  crossorigin="anonymous"></script>
-	<script type="text/javascript" src="turn.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="turn.min.js"></script>
 
-	<style type="text/css">
-		body {
-			background: #ccc;
-		}
-
-		#magazine {
-			position: absolute;
-			top: 60px;
-			width: 576px;
-			height: 752px;
-		}
-
-		#magazine .turn-page {
-			background-color: #ccc;
-			background-size: 100% 100%;
-		}
-
-		#top {
-			background-image: url(pages/a.png);
-			width: 576px;
-			height: 70px;
-			position: absolute;
-			z-index: 100000000000;
-			background-repeat: no-repeat;
-		}
-
-		#back {
-			background-image: url(pages/back.png);
-			height: 80px;
-			width: 80px;
-			position: absolute;
-			z-index: 100000000000;
-			background-repeat: no-repeat;
-			top: 400px;
-			left: 0px;
-			background-size: contain;
-			cursor: pointer;
-		}
-
-		#back:hover {
-			opacity: 0.5;
-		}
-
-		#next:hover {
-			opacity: 0.5;
-		}
-
-		#next {
-			background-image: url(pages/next.png);
-			height: 80px;
-			width: 80px;
-			position: absolute;
-			z-index: 100000000000;
-			background-repeat: no-repeat;
-			top: 400px;
-			left: 510px;
-			background-size: contain;
-			cursor: pointer;
-		}
-
-		#wrapper {
-			padding: 50px 80px 0px 80px;
-			height: 720px;
-			background-color: white;
-			overflow: auto;
-			position: absolute;
-			width: 420px;
-			text-align: justify;
-			mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
-		}
-	</style>
+    <style type="text/css">
+        body {
+            background: #ccc;
+            margin: 0;
+        }
+        
+        #magazine {
+            position: absolute;
+            top: 70px;
+            width: 100vw;
+            height: calc(100vh - 70px);
+        }
+        
+        #magazine .turn-page {
+            background-color: #ccc;
+            background-size: 100% 100%;
+        }
+        
+        #top {
+            width: 100vw;
+            height: 70px;
+            position: absolute;
+            z-index: 100000000000;
+            background-repeat: no-repeat;
+            background-color: black;
+        }
+        
+        #back {
+            background-image: url(pages/back.png);
+            height: 80px;
+            width: 80px;
+            position: absolute;
+            z-index: 100000000000;
+            background-repeat: no-repeat;
+            top: calc(50vh - 40px);
+            left: 0px;
+            background-size: contain;
+            cursor: pointer;
+        }
+        
+        #back:hover {
+            opacity: 0.5;
+        }
+        
+        #next:hover {
+            opacity: 0.5;
+        }
+        
+        #next {
+            background-image: url(pages/next.png);
+            height: 80px;
+            width: 80px;
+            position: absolute;
+            z-index: 100000000000;
+            background-repeat: no-repeat;
+            top: calc(50vh - 40px);
+            background-size: contain;
+            cursor: pointer;
+            right: 0;
+        }
+        
+        #wrapper {
+            height: calc(100vh - 70px);
+            background-color: white;
+            overflow: auto;
+            position: absolute;
+            width: 100vw;
+            mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
+        }
+        
+        #text {
+            padding: 20px 80px;
+            text-align: justify;
+        }
+    </style>
 </head>
 
 <body>
 
-	<div id="top">
+    <div id="top">
 
-	</div>
-	<div id="back">
+    </div>
+    <div id="back">
 
-	</div>
-	<div id="next">
+    </div>
+    <div id="next">
 
-	</div>
-	<div id="magazine">
-		<div>
-			<div id="wrapper">
-				<div id="text">
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes here</p>
-					<p>
-						large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes here</p>
-					<p>
-						large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes here</p>
-					<p>
-						large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					<div style="text-align: center;">P1</div>
-					</br>
-					</br>
-					</br>
-				</div>
-			</div>
-		</div>
-		<div>
-			<div id="wrapper">
-				<div id="text">
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes here</p>
-					<p>
-						large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					</br>
-					<div style="text-align: center;">P2</div>
-				</div>
-			</div>
+    </div>
+    <div id="magazine">
+        <div>
+            <div id="wrapper">
+                <div id="text">
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
+                    <p>
+                        large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
+                    <p>
+                        large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
+                    <p>
+                        large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    <div style="text-align: center;">P1</div>
+                    </br>
+                    </br>
+                    </br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="wrapper">
+                <div id="text">
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
+                    <p>
+                        large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    </br>
+                    <div style="text-align: center;">P2</div>
+                </div>
+            </div>
 
-		</div>
-		<div>
-			<div id="wrapper">
-				<div id="text">
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes here</p>
+        </div>
+        <div>
+            <div id="wrapper">
+                <div id="text">
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
 
-					<p>
-						large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					<div style="text-align: center;">P3</div>
-				</div>
-			</div>
+                    <p>
+                        large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    <div style="text-align: center;">P3</div>
+                </div>
+            </div>
 
-		</div>
-		<div>
-			<div id="wrapper">
-				<div id="text">
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes here</p>
-					<p>
-						large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					<p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge
-						text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
-						goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes
-						herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
-					</p>
-					</br>
-					</br>
-					</br>
-					</br>
-					<div style="text-align: center;">P4</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        </div>
+        <div>
+            <div id="wrapper">
+                <div id="text">
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here</p>
+                    <p>
+                        large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    <p>large text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text
+                        goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes herelarge text goes here
+                    </p>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    <div style="text-align: center;">P4</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-	<script type="text/javascript">
+    <script type="text/javascript">
+        $(window).ready(function() {
+            $('#magazine').turn({
+                display: 'single',
+                acceleration: true,
+                gradients: !$.isTouch,
+                elevation: 50,
+                when: {
+                    turned: function(e, page) {
+                        $('#next').show();
 
-		$(window).ready(function () {
-			$('#magazine').turn({
-				display: 'single',
-				acceleration: true,
-				gradients: !$.isTouch,
-				elevation: 50,
-				when: {
-					turned: function (e, page) {
-						$('#next').show();
-						
-						(function($) {
-    $.fn.hasScrollBar = function() {
-        return this.get(0).scrollHeight > this.height();
-    }
-})(jQuery);
-
-
-		if($('#wrapper').hasScrollBar()) {
-			$('#next').hide();
-        }
-						/*console.log('Current view: ', $(this).turn('view'));*/
-					}
-				}
-			});
-
-			$("#next").click(function () {
-				$('#magazine').turn('next');
-				
-			});
-
-			$("#back").click(function () {
-				$('#magazine').turn('previous');
-			});
-
-	
-			jQuery(function($) {
-    $('#wrapper').on('scroll', function() {
-        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-            $('#next').show();
-        }
-    })
-});
-
-(function($) {
-    $.fn.hasScrollBar = function() {
-        return this.get(0).scrollHeight > this.height();
-    }
-})(jQuery);
+                        (function($) {
+                            $.fn.hasScrollBar = function() {
+                                return this.get(0).scrollHeight > this.height();
+                            }
+                        })(jQuery);
 
 
-		if($('#wrapper').hasScrollBar()) {
-			$('#next').hide();
-        }
-		
-		});
+                        if ($('#wrapper').hasScrollBar() || $("#magazine").turn("page") == "4") {
+                            $('#next').hide();
+                        }
+
+                        if ($("#magazine").turn("page") == "1") {
+                            $('#back').hide();
+                        }
+                    }
+                }
+            });
+
+            $("#next").click(function() {
+                $('#magazine').turn('next');
+
+            });
+
+            $("#back").click(function() {
+                $('#magazine').turn('previous');
+            });
 
 
-		$(window).bind('keydown', function (e) {
+            jQuery(function($) {
+                $('#wrapper').on('scroll', function() {
+                    if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+                        $('#next').show();
+                    }
+                })
+            });
 
-			if (e.keyCode == 37)
-				$('#magazine').turn('previous');
-			else if (e.keyCode == 39)
-				$('#magazine').turn('next');
+            (function($) {
+                $.fn.hasScrollBar = function() {
+                    return this.get(0).scrollHeight > this.height();
+                }
+            })(jQuery);
 
-		});
 
-	</script>
+            if ($('#wrapper').hasScrollBar()) {
+                $('#next').hide();
+            }
+
+        });
+
+
+        $(window).bind('keydown', function(e) {
+
+            if (e.keyCode == 37)
+                $('#magazine').turn('previous');
+            else if (e.keyCode == 39)
+                $('#magazine').turn('next');
+
+        });
+    </script>
 
 </body>
 
