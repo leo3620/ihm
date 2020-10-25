@@ -20,6 +20,7 @@
         
         #magazine .turn-page {
             background-color: #ccc;
+            background: white;
             background-size: 100% 100%;
         }
         
@@ -94,6 +95,13 @@
 
     </div>
     <div id="magazine">
+        <div>
+            <div id="wrapper">
+                <div id="text">
+                    <div style="text-align: center;">UN SUPER LIVRE</div>
+                </div>
+            </div>
+        </div>
         <div>
             <div id="wrapper">
                 <div id="text">
@@ -204,12 +212,15 @@
                         })(jQuery);
 
 
-                        if ($('#wrapper').hasScrollBar() || $("#magazine").turn("page") == "4") {
+                        if ($('#wrapper').hasScrollBar() || page == "5") {
                             $('#next').hide();
                         }
 
-                        if ($("#magazine").turn("page") == "1") {
+                        if (page == 1) {
+                            $(this).turn('peel', 'tr', true);
                             $('#back').hide();
+                        } else {
+                            $('#back').show();
                         }
                     }
                 }
