@@ -226,8 +226,12 @@
                         if (page != 5) {
                             $(this).turn('peel', 'tr', true);
                             $('#back').show();
-                        } else if (page != 1) {
+                        }
+
+                        if (page == 1) {
                             $('#back').hide();
+                        } else {
+                            $('#back').show();
                         }
                     }
                 }
