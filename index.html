@@ -74,7 +74,6 @@
             overflow: auto;
             position: absolute;
             width: 100vw;
-            mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
         }
         
         #text {
@@ -225,6 +224,7 @@
                             $('.p' + page + ' > #wrapper').on('scroll', function() {
                                 if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight && page != "5") {
                                     $('#next').show();
+                                    $(this).turn('peel', 'tr', true);
                                 }
                             })
                         });
@@ -233,10 +233,10 @@
                             $('#next').hide();
                         } else {
                             $('#next').show();
+                            $(this).turn('peel', 'tr', true);
                         }
 
                         if (page != 5) {
-                            $(this).turn('peel', 'tr', true);
                             $('#back').show();
                         }
 
