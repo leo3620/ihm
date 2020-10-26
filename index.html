@@ -226,7 +226,7 @@
                         if (page != 5) {
                             $(this).turn('peel', 'tr', true);
                             $('#back').show();
-                        } else {
+                        } else if (page != 1) {
                             $('#back').hide();
                         }
                     }
