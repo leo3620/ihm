@@ -86,6 +86,17 @@
         .page {
             background-color: #ccc;
         }
+        
+        .firstPage {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .firstPage>img {
+            margin-top: 100px;
+        }
     </style>
 </head>
 
@@ -101,10 +112,11 @@
 
     </div>
     <div id="magazine">
-        <div>
+        <div class="page">
             <div id="wrapper">
-                <div id="text">
-                    <div style="text-align: center;">UN SUPER LIVRE</div>
+                <div id="text" class="firstPage">
+                    <div style="text-align: center;">LE DESIGN</div>
+                    <img src="img.jpg">
                 </div>
             </div>
         </div>
