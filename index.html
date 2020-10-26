@@ -251,7 +251,6 @@
                             $('#next').hide();
                         } else {
                             $('#next').show();
-                            $(this).turn('peel', 'tr', true);
                         }
 
                         if (page != 5) {
@@ -260,6 +259,7 @@
 
                         if (page == 1) {
                             $('#back').hide();
+                            $(this).turn('peel', 'tr', true);
                         } else {
                             $('#back').show();
                         }
