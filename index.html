@@ -65,6 +65,7 @@
             background-size: contain;
             cursor: pointer;
             right: 0;
+            display: none;
         }
         
         #wrapper {
@@ -79,10 +80,10 @@
         #text {
             padding: 20px 80px;
             text-align: justify;
-            font-size: 2rem;
+            font-size: 3rem;
         }
-
-        .page{
+        
+        .page {
             background-color: white;
         }
     </style>
@@ -208,17 +209,24 @@
                 elevation: 50,
                 when: {
                     turned: function(e, page) {
-                        $('#next').show();
-
                         (function($) {
                             $.fn.hasScrollBar = function() {
                                 return this.get(0).scrollHeight > this.height();
                             }
                         })(jQuery);
 
+                        jQuery(function($) {
+                            $('.p' + page + ' > #wrapper').on('scroll', function() {
+                                if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight && page != "5") {
+                                    $('#next').show();
+                                }
+                            })
+                        });
 
-                        if ($('#wrapper').hasScrollBar() || page == "5") {
+                        if ($('.p' + page + ' > #wrapper').hasScrollBar() || page == "5") {
                             $('#next').hide();
+                        } else {
+                            $('#next').show();
                         }
 
                         if (page == 1) {
@@ -239,26 +247,6 @@
             $("#back").click(function() {
                 $('#magazine').turn('previous');
             });
-
-
-            jQuery(function($) {
-                $('#wrapper').on('scroll', function() {
-                    if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-                        $('#next').show();
-                    }
-                })
-            });
-
-            (function($) {
-                $.fn.hasScrollBar = function() {
-                    return this.get(0).scrollHeight > this.height();
-                }
-            })(jQuery);
-
-
-            if ($('#wrapper').hasScrollBar()) {
-                $('#next').hide();
-            }
 
         });
 
